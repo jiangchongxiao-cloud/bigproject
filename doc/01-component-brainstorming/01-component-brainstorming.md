@@ -1,12 +1,10 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->Chongxiao Jiang
+- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->jaing.3185
+- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->Feb 6
 
 ## Assignment Overview
-
-<!-- TODO: read the assignment overview then delete this comment -->
 
 The overall goal of the portfolio project is to have you design and implement
 your own OSU component. There are no limits to what you choose to design and
@@ -29,8 +27,6 @@ implement.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
-
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
 opening the TODOs window from the sidebar. The icon looks like a tree and will
@@ -52,8 +48,6 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<!-- TODO: read the assignment learning objectives then delete this comment -->
-
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
 what we're hoping you will learn through this particular aspect of the portfolio
@@ -66,8 +60,6 @@ project. Specifically, students should be able to:
    discipline
 
 ## Assignment Rubric: 10 Points
-
-<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -106,23 +98,16 @@ Below is further rationale/explanation for the rubric items above:
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
+I am interested in chip design, aircrafts and electric vehicles.
+Alsi, I like playing video games, especially open-world games such as Genshin and GTA.
 
 ## Assignment
-
-<!-- TODO: read the assignment section then delete this comment -->
 
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
 that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
-
-<!-- TODO: browse the list of possible projects then delete this comment -->
 
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
@@ -142,8 +127,6 @@ list-like components that have different ways of manipulating the data. Think
 about different ways you might allow a client to manipulate your component.
 
 ### Example Component
-
-<!-- TODO: review this example component then delete this comment -->
 
 To help you brainstorm a few components, we've provided an example below of a
 component you already know well: NaturalNumber. We highly recommend that you
@@ -211,68 +194,88 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: `MinecraftInventory`
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - this component is to model a storage container in Minecraft, such as a Chest or a Player's Inventory. It consists of a fixed number of slots.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void setSlot(int index, String itemName, int amount)`: Overwrites the content of the slot at `index` with the specified `itemName` and `amount`.
+    - `Map.Pair<String, Integer> removeSlot(int index)`: Clears the slot at `index` and returns the item name and amount that was there.
+    - `boolean isSlotEmpty(int index)`: Reports whether the slot at `index` contains any items.
+    - `int capacity()`: Reports the total number of slots in this inventory.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `boolean addItem(String itemName, int amount)`: Attempts to add items to the inventory, automatically stacking them with existing items of the same type or finding the first empty slot. Returns true if all items fit.
+    - `void sort()`: Organizes the inventory by grouping items of the same type together and sorting them alphabetically.
+    - `void dropAll()`: Clears the inventory.
+    - `boolean isFull()`: Reports whether every slot in the inventory is occupied.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. The state of the inventory changes constantly as items are added, removed, or moved between slots. Standard methods like `transferFrom` also require mutability.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, the `removeSlot` kernel method needs to return two pieces of information: the item type (String) and the stack size (Integer). I would likely use `Map.Pair`.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Can you implement your secondary methods using your kernel methods?
+      - Yes. Minecraft has a famous rule that most items stack up to 64.
+    - Can you implemYes. Similar to the GradeBook design, the `removeSlot` kernel method needs to return two pieces of information: the item type (String) and the stack size (Integer). We would likely use `Map.Pair` or a custom `ItemStack` record to handle this.ent your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. For example, to implement `countItem(String targetName)`, I can loop through each index from `0` to `capacity() - 1`. Inside the loop, we use `removeSlot` to examine the item. If the name matches `targetName`, we add its amount to a running total. Then, we immediately use `setSlot` to put the item back.
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: `GradeBook`
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - The purpose of this component is to model a gradebook for a class, storing student names (Strings) associated with their scores (Integers). The kernel provides basic functionality to add, remove, and check for students, while the secondary interface handles statistical analysis and batch operations.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void add(String name, int score)`: Adds the student `name` with the given `score` to `this`.
+    - `int remove(String name)`: Removes the student with the given `name` from `this` and returns their score.
+    - `Map.Pair<String, Integer> removeAny()`: Removes and returns an arbitrary (name, score) pair from `this`.
+    - `boolean hasStudent(String name)`: Reports whether a student with the given `name` exists in `this`.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `double average()`: Reports the arithmetic mean of all scores in `this`.
+    - `int maxScore()`: Reports the maximum score in `this`.
+    - `int minScore()`: Reports the minimum score in `this`.
+    - `void loadFromFile(String fileName)`: Reads data from the given file and adds the parsed names and scores to `this`.
+    - `void changeScore(String name, int newScore)`: Updates the score for the student with the given `name` to `newScore`.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. As a component extending Standard, it must support methods like `clear`, `newInstance`, and `transferFrom`, which all mutate `this`.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. The `removeAny()` kernel method needs to return both the student's name and score simultaneously, which will use `Map.Pair`
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. I need constants like min score `0` and max score `100` to validate inputs
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. For example, to implement `average()`, I can create a temporary `GradeBook`. Then, we use a loop to call `removeAny()` on `this` repeatedly to get each student's score, add it to a running total, and transfer the student to the temporary `GradeBook`. Once empty, I calculate the average, and then move all students back from the temporary `GradeBook` to `this` using `add()`.
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: `BladeBatteryArray`
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - This component is to model a BYD "Blade Battery" pack, utilizing CTP (Cell-to-Pack) technology. Unlike traditional packs, the long, thin "blade" cells serve as both energy storage units and structural beams. This component manages both the electrochemical state (voltage and temperature) and the structural role of the cells.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void insertBlade(int index, double voltage, double temperature)`: Inserts a new blade cell at the specified physical location `index`, defined by its voltage and current temperature.
+    - `Map.Pair<Double, Double> removeBlade(int index)`: Removes the blade at `index` (simulating a replacement) and returns its {voltage, temperature}.
+    - `int bladeCount()`: Reports the total number of blade cells in the array.
+    - `boolean isSlotOccupied(int index)`: Reports whether a blade is currently installed at the given structural slot.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `boolean isThermalRunaway()`: Scans all blades to check if any temperature exceeds the critical safety threshold.
+    - `double structuralIntegrity()`: Calculates a structural health score (0 to 1) based on the continuity and number of installed blades, reflecting the CTP mechanical design.
+    - `double packVoltage()`: Calculates the total voltage of the array, series connection.
+    - `void coolDown()`: Simulates the thermal management system by reducing the temperature of all blades by a fixed decay factor.
+    - `double estimateSOC(double voltage)`: Estimates the State of Charge (0-100%) based on the voltage input.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. Battery states change dynamically during operation. Also, physically swapping blades changes the object's state.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. The `removeBlade` method needs to return two distinct physical properties of the cell: Voltage and Temperature. Using `Map.Pair<Double, Double>` is the cleanest way to do this without creating a custom `Blade` class in the kernel.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. I need strict constants like `MAX_SAFE_TEMP` (60°C) and `CRITICAL_TEMP` (150°C) for the safety checks.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I am not sure about this.
 
 ## Post-Assignment
 
@@ -280,8 +283,6 @@ The following sections detail everything that you should do once you've
 completed the assignment.
 
 ### Changelog
-
-<!-- TODO: create CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
