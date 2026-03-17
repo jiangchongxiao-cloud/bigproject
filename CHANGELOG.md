@@ -12,6 +12,16 @@ the following form: YYYY.0M.0D.
 - Fixed broken links
 - Disabled AI features globally
 
+## [2026.03.09]
+
+### Added
+
+- Designed kernel and enhanced interfaces for <'BMSKernel', 'BMS'> component
+- Added Component Hierarchy Diagram to the documentation.
+### Updated
+
+- Since BYD published the second-generation CTP, I Integrated high-voltage and fast-charging state tracking contracts based on that.
+
 ## [2024.12.30]
 
 - Added table-based rubrics to all 6 parts of the project
