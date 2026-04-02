@@ -12,6 +12,16 @@ the following form: YYYY.0M.0D.
 - Fixed broken links
 - Disabled AI features globally
 
+## [2026.04.01]
+
+### Added
+- Added `BMSSecondary` abstract class for the BMS component.
+- Implemented common object methods (`toString`, `equals`, `hashCode`) strictly using Kernel methods. (These three methods are developed according to 'NaturalNumberKernel', with the help of AI)
+- Implemented secondary business logic methods (`packVoltage`, `evaluateThermalStatus`, `averageSOC`, `estimateTimeToCharge`)
+
+### Updated
+- Updated `BMSKernel` interface documentation to include the new `bladeAt` and 'size' methods to to enable read-only access.
+
 ## [2026.03.09]
 
 ### Added
