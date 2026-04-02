@@ -88,8 +88,7 @@ public interface BMSKernel extends Standard<BMS> {
          *
          * @param index
          *                the physical slot index of the battery to observe
-         * @return an array containing the blade's sensor data: [voltage,
-         *         current, temperature, soc, soh]
+         * @return an array containing the blade's sensor data
          * @requires 0 <= index and [index is within the maximum capacity of the
          *           pack] and [the slot at index contains a physically placed
          *           battery]

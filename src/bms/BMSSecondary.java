@@ -17,7 +17,7 @@ public abstract class BMSSecondary implements BMS {
     /**
      * one hundred.
      */
-    private static final int ONE_HUNDRED = 100;
+    private static final int HUNDRED = 100;
 
     /**
      * The temperature should not over 60 C.
@@ -205,7 +205,7 @@ public abstract class BMSSecondary implements BMS {
     @Override
     public int estimateTimeToCharge(int targetSoc) {
         assert targetSoc >= 0
-                && targetSoc <= ONE_HUNDRED : "Violation of: 0 <= targetSoc <= ONE_HUNDRED";
+                && targetSoc <= HUNDRED : "Violation of 0 <= targetSoc <= HUNDRED";
 
         double avg = this.averageSOC();
         if (targetSoc <= avg) {
