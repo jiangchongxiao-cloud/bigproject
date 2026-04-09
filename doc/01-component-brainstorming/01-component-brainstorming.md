@@ -1,7 +1,7 @@
 # Portfolio Part 1: Component Brainstorming
 
 - **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->Chongxiao Jiang
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->jaing.3185
+- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->jiang.3185
 - **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->Feb 6
 
 ## Assignment Overview
