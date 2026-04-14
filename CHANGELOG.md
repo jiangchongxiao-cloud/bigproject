@@ -12,6 +12,12 @@ the following form: YYYY.0M.0D.
 - Fixed broken links
 - Disabled AI features globally
 
+## [2026.04.14]
+
+### Added
+- Added `BMS1` class for the BMS component.
+- Implemented kernel methods (`insertBlade`, `updateData`, `removeBlade`, 'size', 'bladeAt') and 3 osu standard methods.
+
 ## [2026.04.01]
 
 ### Added
