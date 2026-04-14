@@ -74,4 +74,26 @@ public interface BMSKernel extends Standard<BMS> {
          *          for that slot is cleared to 0]
          */
         double[] removeBlade(int index);
+
+        /**
+         * Reports the number of battery blades currently in this battery pack.
+         *
+         * @return the number of blades
+         */
+        int size();
+
+        /**
+         * Returns a copy of the battery data at the specified index without
+         * physically removing it from the battery pack.
+         *
+         * @param index
+         *                the physical slot index of the battery to observe
+         * @return an array containing the blade's sensor data
+         * @requires 0 <= index and [index is within the maximum capacity of the
+         *           pack] and [the slot at index contains a physically placed
+         *           battery]
+         * @ensures [this = #this] and [the returned array contains the exact
+         *          sensor data of the specified blade]
+         */
+        double[] bladeAt(int index);
 }
