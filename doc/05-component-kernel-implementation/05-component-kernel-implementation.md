@@ -1,8 +1,8 @@
 # Portfolio Part 5: Kernel Implementation
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) and delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) and delete this comment -->
-- **Due Date**: <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) and delete this comment -->
+- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) and delete this comment -->Chongxiao Jiang
+- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) and delete this comment -->jiang.3185
+- **Due Date**: <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) and delete this comment -->Apr 14
 
 ## Assignment Overview
 
@@ -121,6 +121,15 @@ Below is further rationale/explanation for the rubric items above:
 > and interpreted (i.e., by correspondence).
 
 <!-- TODO: select a representation and explain why -->
+> I select an Array (double[][] array) as the underlying representation for the BMS kernel.
+> This representation mirrors the physical reality of a Cell-to-Pack blade battery architecture. In a real vehicle, blade batteries act as structural components in the chassis, meaning the physical slots are fixed and contiguous.
+> Using a Map would allow slots to structurally disappear, which violates the laws of physics for a rigid chassis.
+> Using a Sequence would cause batteries to shift their physical indices when one is removed, which is also physically impossible.
+> An array ensures that the structural index (the slot) is permanent, while the state of the slot (whether a battery is active or bypassed) can be independently managed. Furthermore, array access O(1) ensures maximum computational efficiency for high-frequency polling.
+
+> Convention: $this.rep is not null; $this.rep.length represents the maximum slot capacity of the battery pack and must be greater than or equal to 0. For any index i where 0 <= i < $this.rep.length, if the slot is empty, $this.rep[i] is null; For any index i where 0 <= i < $this.rep.length, if the slot contains an active battery, $this.rep[i] is a double[] array of length 5, containing the valid hardware sensor data: [voltage, current, temperature, soc, soh].
+
+> Correspondence: The conceptual BMS battery pack is modeled such that the physical battery slot at structural index i corresponds to $this.rep[i]. The total size in the abstract model is exactly the count of non-null elements within $this.rep. The hardware sensor data of the blade at index i corresponds to the 5 Doubles stored in the array, length of 5, at $this.rep[i].
 
 > To start making your kernel implementation, make a branch off of main in your
 > new repo called something like `kernel-implementation`. There are many ways to
@@ -142,7 +151,6 @@ Below is further rationale/explanation for the rubric items above:
 > rebase strategies described [here](https://stackoverflow.com/questions/35790561/working-while-waiting-for-pending-pr)
 > and [here](https://stackoverflow.com/questions/18021888/continue-working-on-a-git-branch-after-making-a-pull-request).
 
-<!-- TODO: make a new branch from main then delete this comment -->
 
 ## Assignment Tasks
 
