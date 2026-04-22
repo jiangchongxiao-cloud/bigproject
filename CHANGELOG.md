@@ -16,6 +16,7 @@ the following form: YYYY.0M.0D.
 
 ### Added
 - Added `BMSTest.java` class and 'BMS1Test.java' to test kernel and secondary methods.
+- Added 2 use cases 'VehicleDashboard.java' and 'BatteryPackRepair.java'.
 - Added the discussion of the project.
 
 ### Updated
