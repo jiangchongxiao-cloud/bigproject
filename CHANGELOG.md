@@ -12,6 +12,15 @@ the following form: YYYY.0M.0D.
 - Fixed broken links
 - Disabled AI features globally
 
+## [2026.04.22]
+
+### Added
+- Added `BMSTest.java` class and 'BMS1Test.java' to test kernel and secondary methods.
+- Added the discussion of the project.
+
+### Updated
+- Updated file structure.
+
 ## [2026.04.14]
 
 ### Added

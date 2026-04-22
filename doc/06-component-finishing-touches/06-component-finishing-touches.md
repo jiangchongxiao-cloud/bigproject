@@ -1,8 +1,8 @@
 # Portfolio Part 6: Finishing Touches
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) and delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) and delete this comment -->
-- **Due Date**: <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) and delete this comment -->
+- **Name**: Chongxiao Jiang
+- **Dot Number**: jiang.3185
+- **Due Date**: Apr 24
 
 ## Assignment Overview
 
@@ -49,8 +49,6 @@ Many of these additional techniques are somewhat out of the scope of this
 course, but just knowing about them could set you up for long term success.
 
 ## Assignment Checklist
-
-<!-- TODO: browse the checklist then delete this comment -->
 
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
@@ -141,7 +139,6 @@ to see them. If you don't like this workflow, you may try following the
 rebase strategies described [here](https://stackoverflow.com/questions/35790561/working-while-waiting-for-pending-pr)
 and [here](https://stackoverflow.com/questions/18021888/continue-working-on-a-git-branch-after-making-a-pull-request).
 
-<!-- TODO: make a new branch from main then delete this comment -->
 
 ## Assignment Tasks
 
@@ -307,18 +304,18 @@ Take some time to fill them out honestly.
 > complete the portfolio project, how much better (or worse) do you think you
 > understand software development and why?
 
-<!-- TODO: discuss -->
+Of course I got a better understanding of software development. After all, this is my first developing software from nothing. Previously, during my two-month Java Developer internship at an internet company, I struggled to understand why a program needed to be divided into hundreds of distinct files and layers. I only knew how to connect them sequentially. Howervr, by completing the portfolio project, I truly understand the logic behind software architecture and the necessity of separating interfaces from implementations. I even have the ablity to design a simple program construction.
 
 > Also, did the portfolio project surface any gaps in your own knowledge of
 > software development. If so, what are those gaps and how did you address them?
 
-<!-- TODO: discuss -->
+Before doing the portfolio project, GitHub was a "mysterious" and intimidating entity to me. I often felt that Git operations followed an unpredictable logic, which I referred to as "Metaphysics"(a Chinese internet meme word) to me, The most significant gap surfaced during the integration phase: I struggled to understand the complete workflow of a Pull Request (PR). I once encountered a situation where my code (BMS1.java) refused to sync to my local machine despite a successful push, only to realize that creating a PR is a remote main branch remains unchanged until an explicit Merge is performed on the web interface. I addressed this gap by treating Git as a logical state machine. By repeatedly performing branch switches, handling pulland pushin the fellowing assigements, I can easily handle these now. I also learned how to control the git thing though terminal, which looks perfessional, LOL.
 
 > Finally, as a part of completing the portfolio project, to what extent has
 > your perspective of software development changed, if at all? In other words,
 > is software development something you still enjoy? If not, why not?
 
-<!-- TODO: discuss -->
+I have been learning programming since high school, starting with early Visual Basic. Despite undergoing high-intensity training for the college entrance exams, I never exhibited a natural talent for coding. Even my father, an accomplished software and database engineer at the state grid, told me I lacked the gift for it. I have never had a passion for pure software development. My true interest lies in embedded systems and electric vehicles, where I value the physical synergy between hardware and software. Completing this portfolio project did not reignite a passion for programming within me. However, I am glad that I went through this process. Building this project allowed me to think deeply about the intricate physical and logical details of how a Battery Management System actually operates. Translating those mechanisms into code forced me to understand the hardware from a completely new angle.All in all, the engineering insights I gained into EV systems made the experience highly rewarding.
 
 > One of the challenges of completing the portfolio project is picking up a lot
 > of skills on your own. Some of these skills are, of course, software skills.
@@ -326,26 +323,32 @@ Take some time to fill them out honestly.
 > this process. Therefore, the first question is what skills did you pick up
 > through this process?
 
-<!-- TODO: discuss -->
+> 1. Systems Engineering Thinking: I learned how to abstract real world physical systems into digital models. It bridged the gap between pure abstract logic and tangible hardware behavior.
+
+> 2. Architectural Decision Making And Trade-offs: During the testing phase, I encountered a logical conflict regarding whether battery blades should be placed anywhere or assembled consecutively. I learned how to make realistic architectural trade-offs, choosing system stability and physical constraints over unnecessary code complexity.
+
+> 3. Technical Documentation: I learned that code is read by humans as much as it is executed by machines. By writing Javadocs and maintaining structured Markdown reflections, I developed the skill of clearly communicating my engineering intent to future reviewers.
 
 > The follow-up question is: could you rephrase these skills you picked up
 > as bullet points that you could put on a resume? Try it below.
 
-<!-- TODO: discuss -->
+Systems Engineering & Simulation: Architected a software-based Battery Management System (BMS) in Java, successfully translating real-world EV hardware constraints (thermal thresholds, voltage sag, high current draw) into robust digital models and logical strict contracts.
 
 > Next, how has working on this project affected your career trajectory?
 > In other words, do you now hate the topic you picked? Or, are you even more
 > interested in it? Both outcomes are valuable to your personal development.
 
-<!-- TODO: discuss -->
+> Working on this project has clarified and reinforced my career trajectory. While it confirmed that I do not want to pursue a career as a traditional, pure software developer, it significantly deepened my passion for my chosen field: Electric Vehicles and Embedded Systems. Modeling the BMS demonstrated exactly the kind of engineering I want to do in the future—working at the crucial intersection of physical hardware and control software. I am now certain that my career path lies in engineering the control logic and systems that govern high-performance automotive hardware.
+> Good new is that I have found an internship in OSU Center for Automotive Research in this summer.
 
 > Finally, consider the skills you've picked up and your current career
 > trajectory. What are some things you could do to continue on your
 > career trajectory? Also, who are some mentors you could contact to help
 > you stay on your path?
 
-<!-- TODO: discuss -->
+> To continue on my current trajectory, my next step is to take part in the reasearch at the Center for Automotive Research this upcoming summer. I plan to apply the systems engineering mindset and the hardware-to-software simulation skills I developed in this project directly to real world automotive research. After that, my goal is to prepare for elite graduate programs in Computer Engineering, where I intend to specialize further in EV architecture, power electronics, and embedded control systems.
 
+> Regarding mentorship, I plan to proactively contact and learn from Dr. Villani and Prof. Codrin G. Cantemir. I can start with sharing the Battery Management System component I built for this class, and discuss how fundamental software engineering principles can be applied to their advanced vehicle simulations and my upcoming research work.
 ### Changelog
 
 <!-- TODO: update CHANGELOG then delete this comment -->
@@ -383,8 +386,6 @@ like to accomplish that, you will need to make GitHub releases after each pull
 request merge (or at least tag your commits). This is not required.
 
 ### Submission
-
-<!-- TODO: read the submission instructions then delete this comment -->
 
 Assuming that your project is in a GitHub repo somewhere and your changes are on
 a proof-of-concept branch, then what we'll want you to do is create a pull
@@ -435,7 +436,5 @@ PDF to read this rubric as a table).
 If you'd like to give feedback for this assignment (or any assignment, really),
 make use of [this survey][survey]. Your feedback helps make assignments
 better for future students.
-
-<!-- TODO: follow the link to share your feedback then delete this comment -->
 
 [survey]: https://forms.gle/dumXHo6A4Enucdkq9

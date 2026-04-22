@@ -1,4 +1,4 @@
-package bms;
+package components.bms;
 
 import components.standard.Standard;
 
