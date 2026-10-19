@@ -1,4 +1,4 @@
-package bms;
+package components.bms;
 
 /**
  * {@code BMS} represented as a two-dimensional array.

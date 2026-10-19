@@ -1,4 +1,4 @@
-package bms;
+package components.bms;
 
 /**
  * Layered implementations of secondary methods for {@code BMS}.

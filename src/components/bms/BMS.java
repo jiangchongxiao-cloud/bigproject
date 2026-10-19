@@ -1,4 +1,4 @@
-package bms;
+package components.bms;
 
 /**
  * BMS enhanced interface with secondary methods. Provides advanced telemetry
