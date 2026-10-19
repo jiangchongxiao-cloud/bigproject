@@ -1,5 +1,69 @@
-# Portfolio Project
+# Battery Management System — Java
 
+A Java battery-pack software component developed by **Chongxiao Jiang**
+for an Ohio State University software component portfolio project.
+
+Inspired by my interest in electric vehicles, this project applies
+object-oriented design, interface contracts, and layered implementation
+to battery-state management.
+
+## Features
+
+- Stores voltage, current, temperature, state of charge (SOC),
+  and state of health (SOH) for individual battery blades
+- Supports blade insertion, removal, data updates, and observation
+- Calculates pack voltage and average SOC
+- Provides temperature warnings and a simplified charging-time estimate
+- Protects internal data through defensive copying
+
+This is an educational model using simulated readings.
+
+## Architecture
+
+The implementation follows the OSU Components design approach:
+
+- **BMSKernel**: primitive state-management operations
+- **BMS**: enhanced interface for pack-level calculations
+- **BMSSecondary**: secondary-method implementation
+- **BMS1**: concrete implementation using a two-dimensional array
+
+[View source code](src/components/bms/)
+
+## Demonstrations
+
+- [VehicleDashboard.java](src/VehicleDashboard.java):
+  simulates vehicle monitoring and a high-temperature warning.
+- [BatteryPackRepair.java](src/BatteryPackRepair.java):
+  demonstrates blade removal, simulated maintenance, and reinstallation.
+
+## Testing
+
+**All 28 JUnit 4 tests passed in the original development environment.**
+
+Tests cover constructors, kernel operations, component lifecycle methods,
+defensive copying, secondary calculations, and common object methods.
+
+[View tests](test/components/bms/)
+
+## Requirements
+
+- Java JDK
+- OSU `components.jar`
+- JUnit 4 and Hamcrest for testing
+
+Dependency JAR files are not included in this repository.
+
+## Development Notes
+
+Built from the OSU portfolio template. AI assistance for `toString`,
+`equals`, and `hashCode` is documented in the [changelog](CHANGELOG.md).
+
+## Author
+
+Chongxiao Jiang  
+The Ohio State University
+
+# Portfolio Project
 The purpose of this repo is to provide a framework for creating your own
 component in the software sequence discipline. If you were unsure whether
 or not to make your own, consider the following testimonial:
